@@ -51,13 +51,12 @@ public class TwitterTopology {
 
         TopologyBuilder builder = new TopologyBuilder();
 
-
-
-
         TwitterSpout spout = new TwitterSpout(consumerKey, consumerSecret, accessToken, accessTokenSecret, tweetFilterQuery);
 
         builder.setSpout("spout", spout,1);
-
+        
+        // RandomTweet randomTweet = new RandomTweet();
+        // builder.setSpout("spout",randomTweet,1);
 
         Config conf = new Config();
         conf.setDebug(false);
